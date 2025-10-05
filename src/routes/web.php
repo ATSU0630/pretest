@@ -1,18 +1,22 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+// routes/web.php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// ... Fortifyをインストールすると、これらのルートはFortifyが管理するため、
+//      Fortifyのビューとアクションを使うのが最もシンプルです。
+//      Fortifyが自動で /login, /register などのPOST/GETルートを生成します。
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// 既存のAuthルートを削除またはコメントアウト
+// Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
+// Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+
+
+// =======================================================
+// 1. お問い合わせフォームのルート (変更なし)
+// ...
+// =======================================================
+
+// =======================================================
+// 2. 管理画面のルート (変更なし)
+// Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+// =======================================================
