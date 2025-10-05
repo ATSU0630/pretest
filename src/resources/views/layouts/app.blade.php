@@ -1,14 +1,42 @@
-<?php
+<!DOCTYPE html>
+<html lang="ja">
 
-{{-- resources/views/layouts/app.blade.php --}}
-<header>
-    <nav>
-        <a href="{{ url('/') }}">お問い合わせフォーム</a>
-        <a href="{{ route('login') }}">login</a> {{-- Fortifyのルーティングに合わせる --}}
-        <a href="{{ route('register') }}">登録</a>
-        <a href="{{ route('admin.index') }}">管理画面</a>
-    </nav>
-</header>
-<main>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Management</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@3.0.2/destyle.css">
+  <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+  @yield('css')
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <div class="header-utilities">
+        <a class="header__logo" href="/">
+          Attendance Management
+        </a>
+        <nav>
+          <ul class="header-nav">
+            <li class="header-nav__item">
+              <a class="header-nav__link" href="/mypage">マイページ</a>
+            </li>
+            <li class="header-nav__item">
+              <form>
+                <button class="header-nav__button">ログアウト</button>
+              </form>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
     @yield('content')
-</main>
+  </main>
+</body>
+
+</html>
